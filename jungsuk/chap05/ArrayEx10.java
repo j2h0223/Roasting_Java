@@ -21,7 +21,7 @@ public class ArrayEx10 {
                     changed = true;  // 자리바꿈 발생
 
 //                    System.out.print("\t");
-//                    for (int k : numArr){
+//                    for (int k : numArr){ // 향상된 for
 //                        System.out.print(numArr[k]);
 //                    }
 //                    System.out.println();
@@ -34,7 +34,7 @@ public class ArrayEx10 {
 //             System.out.println();
 
 //             for (int k = 0; k < numArr.length; k++){
-             for(int k : numArr){
+             for(int k : numArr){ // 향상된 for
                 System.out.print(numArr[k]);
              }
              System.out.println();

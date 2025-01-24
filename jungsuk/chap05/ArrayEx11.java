@@ -5,7 +5,8 @@ public class ArrayEx11 {
         int[] numArr = new int[10];
         int[] counter = new int[10];
 
-        for (int i=0; i < numArr.length; i++){
+//        for (int i=0; i < numArr.length; i++){
+        for (int i : numArr){ // 향상된 for
 //            numArr[i] = (int)(Math.random() * 10);
 //            System.out.print(numArr[i]);
             System.out.print(numArr[i] = (int)(Math.random()*10));
@@ -13,7 +14,7 @@ public class ArrayEx11 {
         System.out.println();
 
 //        for (int i = 0; i < numArr.length; i++){
-        for(int i : numArr){
+        for(int i : numArr){ // 향상된 for
             counter[numArr[i]]++;
         }
 
