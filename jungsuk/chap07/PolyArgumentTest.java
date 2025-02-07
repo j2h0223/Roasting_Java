@@ -126,5 +126,6 @@ class PolyArgumentTest {
 
         b.refund(book2);
         b.summary();
-        b.currentMoneyBonus();    }
+        b.currentMoneyBonus();
+    }
 }
