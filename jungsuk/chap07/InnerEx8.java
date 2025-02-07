@@ -12,4 +12,4 @@ class InnerEx8 {
             }
         }); // 익명 클래스 종료
     } // main 종료
-} // InnerEx8 종료
+}
