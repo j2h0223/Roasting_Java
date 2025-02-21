@@ -1,11 +1,12 @@
 package DS_Algo.List;
 
 //import java.io.*;
+
 import java.util.*;
 
 //import DS_Algo.List.Node.*;
 
-class LinkedList extends List {
+class LinkedList extends DS_Algo.List.List {
 
     LinkedList() {
         initList();
