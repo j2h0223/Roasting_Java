@@ -58,7 +58,7 @@ class CLinkedList extends List {
         for (int i = 0; i < index; i++) {
             current = current.nextNode;
         }
-        newNode = current.nextNode;
+        newNode.nextNode = current.nextNode;
         current.nextNode = newNode;
 
         size++;
@@ -71,7 +71,7 @@ class CLinkedList extends List {
         Node current = tail.nextNode;
 
         if (Tail) {
-            while (current.equals(tail)) {
+            while (!current.equals(tail)) {
                 before = current;
                 current = current.nextNode;
             }
@@ -84,7 +84,7 @@ class CLinkedList extends List {
         current = null;
         size--;
 
-        return current.data;
+        return delData;
     }
 
     void removeHead() {
@@ -105,8 +105,11 @@ class CLinkedList extends List {
         for (int i = 0; i < index; i++) {
             before = current;
             current = current.nextNode;
+//            System.out.println(current.data);
         }
         delData = current.data;
+        before.nextNode = current.nextNode;
+
         current = null;
         size--;
 
