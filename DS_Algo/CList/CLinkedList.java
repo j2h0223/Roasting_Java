@@ -81,7 +81,7 @@ class CLinkedList extends List {
             before.nextNode = current.nextNode;
         }
         delData = current.data;
-        current = null;
+//        current = null;
         size--;
 
         return delData;
@@ -105,12 +105,11 @@ class CLinkedList extends List {
         for (int i = 0; i < index; i++) {
             before = current;
             current = current.nextNode;
-//            System.out.println(current.data);
         }
         delData = current.data;
         before.nextNode = current.nextNode;
 
-        current = null;
+//        current = null;
         size--;
 
         return delData;
@@ -121,7 +120,7 @@ class CLinkedList extends List {
         Node current = tail.nextNode;
 
         for (int i = 0; i < size(); i++) {
-            if (current.data == data) {
+            if (current.data.equals(data)) {
                 return true;
             }
             current = current.nextNode;
@@ -136,7 +135,7 @@ class CLinkedList extends List {
         Node current = tail.nextNode;
 
         for (index = 0; index < size(); index++) {
-            if (current.data == data) {
+            if (current.data.equals(data)) {
                 break;
             }
             current = current.nextNode;
@@ -176,7 +175,6 @@ class CLinkedList extends List {
     void display() {
         if (isEmpty()) {
             System.out.println("Empty list");
-            return;
         } else {
             Node current = tail.nextNode;
             for (int i = 0; i < size(); i++) {
