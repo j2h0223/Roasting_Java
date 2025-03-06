@@ -12,7 +12,7 @@ class CLinkedListMain {
         cll.addTail(9);
         cll.addHead(5);
 
-        cll.insertAt(1,8);
+        cll.insertAt(7, 8);
 
         cll.display();
         System.out.println(cll.size());
@@ -28,15 +28,14 @@ class CLinkedListMain {
         cll.display();
         System.out.println(cll.size());
 
-        if(cll.contains(9)){
+        if (cll.contains(9)) {
             System.out.println("9 exists.");
-        }else {
+        } else {
             System.out.println("9 doesn't exist.");
         }
-        if(cll.contains(7)){
+        if (cll.contains(7)) {
             System.out.println("7 exists.");
-        }
-        else{
+        } else {
             System.out.println("7 doesn't exists.");
         }
 

@@ -18,14 +18,12 @@ class CLinkedList extends List {
 
     @Override
     void add(Integer data, boolean Tail) {
-        if (isEmpty()) {
-            Node newNode = new Node(data);
+        Node newNode = new Node(data);
 
+        if (isEmpty()) {
             tail = newNode;
             newNode.nextNode = newNode;
         } else {
-            Node newNode = new Node(data);
-
             newNode.nextNode = tail.nextNode;
             tail.nextNode = newNode;
             if (Tail) {
@@ -53,19 +51,29 @@ class CLinkedList extends List {
         }
 
         Node newNode = new Node(data);
-
         Node current = tail;
-        for (int i = 0; i < index; i++) {
-            current = current.nextNode;
+
+        if (index == size()){
+            newNode.nextNode = tail.nextNode;
+            tail.nextNode = newNode;
+            tail = newNode;
         }
-        newNode.nextNode = current.nextNode;
-        current.nextNode = newNode;
+        else{
+            index = index % size();
+            for (int i = 0; i < index; i++) {
+                current = current.nextNode;
+            }
+            newNode.nextNode = current.nextNode;
+            current.nextNode = newNode;
+        }
 
         size++;
     }
 
     @Override
     Integer remove(boolean Tail) {
+        if (isEmpty()) return null;
+
         Integer delData;
         Node before = tail;
         Node current = tail.nextNode;
@@ -102,6 +110,7 @@ class CLinkedList extends List {
         Node before = tail;
         Node current = tail.nextNode;
 
+        index = index % size();
         for (int i = 0; i < index; i++) {
             before = current;
             current = current.nextNode;
@@ -148,6 +157,7 @@ class CLinkedList extends List {
     Integer get(int index) {
         Node current = tail.nextNode;
 
+        index = index % size();
         for (int i = 0; i < index; i++) {
             current = current.nextNode;
         }
